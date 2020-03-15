@@ -21,10 +21,24 @@
 %
 % Linguagem de programação PROLOG - Introdução
 % https://www.youtube.com/watch?v=j7nWslfE6So&list=PLj0FuMXt1-5yVRnJhsxw_MAVMlD5UwvR_
-%
+
+
+% FATOS
 gerou(kelly, maria).
 gerou(cleber, maria).
 gerou(cleber, bruna).
 gerou(maria, julia).
 gerou(maria, pedro).
 gerou(pedro, lucas).
+
+feminino(kelly).
+feminino(maria).
+feminino(julia).
+feminino(bruna).
+masculino(cleber).
+masculino(pedro).
+masculino(lucas).
+
+% REGRAS
+filho(Y, X) :- gerou(X, Y).
+mae(X, Y) :- gerou(X, Y),feminino(X).
